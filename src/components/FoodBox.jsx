@@ -1,7 +1,8 @@
 import React from 'react';
 
 function FoodBox(props) {
-  const { food } = props;
+  const { food, clickToDelete } = props;
+
 
   return (
     <div>
@@ -10,7 +11,7 @@ function FoodBox(props) {
       <p>Calories: {food.calories}</p>
       <p>Servings: {food.servings}</p>
       <p>Total Calories: {food.calories * food.servings}</p>
-      <button>Delete</button>
+      <button onClick={() => clickToDelete(food.name)}>Delete</button>
     </div>
   );
 }
